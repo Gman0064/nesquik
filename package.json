@@ -1,0 +1,30 @@
+{
+  "name": "nesquik",
+  "version": "0.1.0",
+  "description": "JavaScript-based interpreter to NES 6502 Assembly",
+  "main": "index.js",
+  "bin": {
+    "nesquik": "./bin/nesquik"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "falafel": "~0.3.1"
+  },
+  "devDependencies": {
+    "tap": "~0.4.4"
+  },
+  "scripts": {
+    "test": "tap tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Gman0064/nesquik.git"
+  },
+  "author": "Garrett Dickinson <dickinsongarrett@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gman0064/nesquik/issues"
+  }
+}

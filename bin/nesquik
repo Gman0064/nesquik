@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var nesquik = require('..');
+var fs = require('fs');
+
+for (var x = 0; x < (process.argv.length); x++) {
+    if (process.argv[x] == '-h' || process.argv[x] == 'help') {
+        console.log("Nesquik: JavaScript-based interpreter to NES 6502 Assembly");
+        console.log("");
+        console.log("--Usage--");
+        console.log("nesquik 'input.js' 'output.s'");
+        return
+    }
+}
+
+if (process.argv.length == 4) {
+    if (process.argv[2].substr(-3) == '.js') {
+        if (process.argv[3].substr(-2) == '.s') {
+            var file = fs.readFileSync(process.argv[2], 'utf-8');
+            var output = nesquik.compile(file);
+
+            fs.writeFileSync(process.argv[3], output);
+        } else {
+            console.log("Error: Improper output file, must be of type Assembly '.s' file.");
+            return
+        }
+    } else {
+        console.log("Error: Improper input file, must be of type JavaScript '.js' file.");
+        return
+    }
+} else {
+    console.log("Error: Improper parameters or no parameters given.");
+    console.log("Try 'nesquik -h' for more information.");
+    return
+}
