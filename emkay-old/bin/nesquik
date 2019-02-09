@@ -29,7 +29,7 @@ if (process.argv.length == 4) {
         return
     }
 } else {
-    console.log("Error: Improper parameters or no parameters given.");
+    console.log("Error: Improper or invalid given parameters.");
     console.log("Try 'nesquik -h' for more information.");
     return
 }
